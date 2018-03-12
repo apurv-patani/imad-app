@@ -6,15 +6,15 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/article_one', function (req, res) {
-  res.sendFile("Article one it is. Believe it.");
+  res.send("Article one it is. Believe it.");
 });
 
 app.get('/article_two', function (req, res) {
-  res.sendFile("Article two it is. Believe it.");
+  res.send("Article two it is. Believe it.");
 });
 
 app.get('/article_three', function (req, res) {
-  res.sendFile("Article three it is. Believe it.");
+  res.send("Article three it is. Believe it.");
 });
 
 app.get('/', function (req, res) {
