@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var article_one={
+var articles={
+    article_one:{
     title: 'Article One | Apurv Patani',
     heading: 'Article One',
     date: 'March 13 2018',
@@ -34,7 +34,20 @@ var article_one={
                     use my speed to fight crime and find others like me, and one day I'll 
                     find who killed my mother and get justice for my father. I am The Flash.
                 </p>`
+},
+article_two:{
+    title:'Article Two | Apurv Patani',
+    heading: 'Article Two',
+    date: 'March 25, 2018',
+    content:
+    `<p>
+     content for Article Two.
+     </p>
+    `
+}
 };
+
+
 
 function createTemplate(data){
     var htmltemplate=
@@ -77,11 +90,11 @@ app.get('/article_three', function (req, res) {
 });
 
 app.get('/article_one', function (req, res) {
-    res.send(createTemplate(article_one));
+    res.send(createTemplate(articles.article_one));
 });
 
 app.get('/article_two', function (req, res) {
-  res.send("Article two it is. Believe it.");
+  res.send(createTemplate(articles.article_two));
 });
 
 
