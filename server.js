@@ -5,6 +5,69 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var article_one={
+    title: 'Article One | Apurv Patani',
+    heading: 'Article One',
+    date: 'March 13 2018',
+    content: `<p>
+                    My name is Barry Allen and I'm the fastest man alive. When I was a chil
+                    , I saw my mother killed by something impossible. My father went to 
+                    prison for her murder. Then an accident made me the impossible. To the 
+                    outside world, I'm just an ordinary forensic scientist, but secretly I 
+                    use my speed to fight crime and find others like me, and one day I'll 
+                    find who killed my mother and get justice for my father. I am The Flash.
+                </p>
+                <p>
+                    My name is Barry Allen and I'm the fastest man alive. When I was a chil
+                    , I saw my mother killed by something impossible. My father went to 
+                    prison for her murder. Then an accident made me the impossible. To the 
+                    outside world, I'm just an ordinary forensic scientist, but secretly I 
+                    use my speed to fight crime and find others like me, and one day I'll 
+                    find who killed my mother and get justice for my father. I am The Flash.
+                </p>
+                <p>
+                    My name is Barry Allen and I'm the fastest man alive. When I was a chil
+                    , I saw my mother killed by something impossible. My father went to 
+                    prison for her murder. Then an accident made me the impossible. To the 
+                    outside world, I'm just an ordinary forensic scientist, but secretly I 
+                    use my speed to fight crime and find others like me, and one day I'll 
+                    find who killed my mother and get justice for my father. I am The Flash.
+                </p>`
+};
+
+function createTemplate(data){
+    var htmltemplate=
+        `<html>
+            <head>
+                <title>
+                    ${data.title}
+                </title>
+                <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div class="container">
+                    <h3>
+                    ${data.heading}
+                    </h3>
+                    <div>
+                        <a href="/">Home</a>
+                    </div>
+                    <hr/>
+                    <div>
+                        March 13 2018
+                    </div>
+                    <div>
+                        ${data.content}
+                    </div>
+                </div>
+            </body>
+        </html>
+        `;
+    return htmltemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -14,7 +77,7 @@ app.get('/article_three', function (req, res) {
 });
 
 app.get('/article_one', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article_one.html'));
+    res.send(createTemplate(article_one));
 });
 
 app.get('/article_two', function (req, res) {
