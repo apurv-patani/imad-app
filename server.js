@@ -35,13 +35,13 @@ var articles={
                     find who killed my mother and get justice for my father. I am The Flash.
                 </p>`
 },
-article_two:{
+    article_two:{
     title:'Article Two | Apurv Patani',
     heading: 'Article Two',
     date: 'March 25, 2018',
     content:
     `<p>
-     content for Article Two.
+     Content for Article Two.
      </p>
     `
 }
@@ -89,12 +89,9 @@ app.get('/article_three', function (req, res) {
   res.send("Article three it is. Believe it.");
 });
 
-app.get('/article_one', function (req, res) {
-    res.send(createTemplate(articles.article_one));
-});
-
-app.get('/article_two', function (req, res) {
-  res.send(createTemplate(articles.article_two));
+app.get('/articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles.articleName));
 });
 
 
