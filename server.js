@@ -89,7 +89,7 @@ app.get('/article_three', function (req, res) {
   res.send("Article three it is. Believe it.");
 });
 
-app.get('/articleName', function (req, res) {
+app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
