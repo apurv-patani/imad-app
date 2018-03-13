@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles={
-    'article_one':{
+    article_one:{
     title: 'Article One | Apurv Patani',
     heading: 'Article One',
     date: 'March 13 2018',
@@ -35,7 +35,7 @@ var articles={
                     find who killed my mother and get justice for my father. I am The Flash.
                 </p>`
 },
-    'article_two':{
+    article_two:{
     title:'Article Two | Apurv Patani',
     heading: 'Article Two',
     date: 'March 25, 2018',
