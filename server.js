@@ -68,7 +68,7 @@ function createTemplate(data){
                     </div>
                     <hr/>
                     <div>
-                        March 13 2018
+                        ${data.date}
                     </div>
                     <div>
                         ${data.content}
